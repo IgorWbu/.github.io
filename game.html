@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineChrono</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: beige;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the body take up the full viewport height */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            width: 300px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Adjust vertical spacing */
+            position: absolute; /* Position the button */
+            top: 5px; /* Adjust the vertical position in pixels */
+            left: 550px; /* Adjust the horizontal position in pixels */
+        }
+
+        #question {
+            margin-top: 50px; /* Adjust spacing from logo */
+        }
+
+        #movie_title {
+            font-size: 24px; /* Adjust font size */
+            margin-bottom: 20px; /* Adjust spacing */
+        }
+
+        #movie_image {
+            max-width: 400px; /* Adjust maximum width of the movie image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Adjust spacing */
+        }
+
+        .button {
+            background-color: black; /* Change button color to black */
+            color: white; /* Change text color to white */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-right: 10px; /* Adjust spacing between buttons */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .button:hover {
+            background-color: #333; /* Darken button color on hover */
+        }
+
+        #result {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        #result.false {
+            background-color: red;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .surprise-button {
+            color: black; /* Change text color to black */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .surprise-button:hover {
+            color: #333; /* Darken text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/your_logo.png" alt="CineChrono Logo" class="logo">
+        <div id="question">
+            <h2>Question:</h2>
+            <p id="movie_title">{{ question }}</p>
+            <button class="button" onclick="answer('before')">Before</button>
+            <button class="button" onclick="answer('same')">Same Year</button>
+            <button class="button" onclick="answer('after')">After</button>
+        </div>
+        <div id="result" style="display: none;"></div>
+    </div>
+    <footer>
+        <div class="bottom-left">@igor.wbu</div>
+        <div class="bottom-right"><a href="https://www.fiverr.com/lhassanelamoudn" class="surprise-button" target="_blank">Tap Here For A Surprise !</a></div>
+    </footer>
+    <script>
+        // JavaScript code to handle the game logic
+        function answer(choice) {
+            // Send the user's choice to the server for processing
+            // You can use AJAX to send a request to your Flask backend
+            // and handle the logic there
+            // For simplicity, I'm just logging the choice to the console
+            console.log("User chose: " + choice);
+
+            // Simulate server response (replace with actual AJAX call)
+            var isCorrect = Math.random() < 0.5; // Randomly determine if the answer is correct
+
+            // Display the result on the page
+            var resultElement = document.getElementById("result");
+            resultElement.innerText = isCorrect ? "Correct!" : "False";
+            resultElement.className = isCorrect ? "" : "false";
+            resultElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>

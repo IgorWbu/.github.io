@@ -1,0 +1,67 @@
+/* styles.css */
+
+body {
+    background-color: beige;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body take up the full viewport height */
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    width: 700px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Adjust vertical spacing */
+    position: absolute; /* Position the button */
+    top: 200px; /* Adjust the vertical position in pixels */
+    left: 350px; /* Adjust the horizontal position in pixels */
+}
+
+.play-button {
+    background-color: black; /* Change button color to black */
+    color: white; /* Change text color to white */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute; /* Position the button */
+    top: 320px; /* Adjust the vertical position in pixels */
+    left: 650px; /* Adjust the horizontal position in pixels */
+}
+
+.play-button:hover {
+    background-color: #333; /* Darken button color on hover */
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.surprise-button {
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+.surprise-button:hover {
+    color: #333; /* Darken text color on hover */
+}
