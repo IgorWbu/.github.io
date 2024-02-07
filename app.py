@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import random
 
-app = Flask(__name__, static_folder="../frontend/static", template_folder="../frontend/templates")
+app = Flask(__name__)
 
 # Define a list of dictionaries containing movie and event information
 movie_events = [
